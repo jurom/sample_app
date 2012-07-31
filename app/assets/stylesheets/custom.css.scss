@@ -1,0 +1,87 @@
+@import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  letter-spacing: -2px;
+  font-size: 3em;
+}
+
+h2 {
+  color: $grayLight;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #33F;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $grayLight;
+  a {
+    color: $gray;
+    &:hover {
+      color: $grayDarker;
+      text-decoration: none;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
