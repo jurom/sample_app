@@ -38,8 +38,9 @@ SampleApp::Application.configure do
 
   # Speed up tests by lowering the BCrypt's cost function
   require 'bcrypt'
-  silence_warnings do
-    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+    silence_warnings do
+      BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+    end
   end
 
 end
