@@ -65,6 +65,19 @@ describe "Authentication" do
 	end
       end
 
+      describe "in the Micropost controller" do
+
+	describe "submitting a post micropost request" do
+	  before { post microposts_path }
+	  specify { response.should redirect_to(signin_path) }
+	end
+
+	describe "submitting a delete micropost request" do
+	  before { delete micropost_path(FactoryGirl.create(:micropost)) }
+	  specify { response.should redirect_to(signin_path) }
+	end
+      end
+
       describe "when attempting to visit a protected page" do
         before do
 	  visit edit_user_path(user)
@@ -87,6 +100,17 @@ describe "Authentication" do
 
       describe "submitting a DELETE request to the Users#destroy action" do
 	before { delete user_path(user) }
+	specify { response.should redirect_to(root_path) }
+      end
+    end
+
+    describe "as admin user" do
+      let(:admin) { FactoryGirl.create(:admin) }
+
+      before { sign_in admin }
+
+      describe "submitting a DELETE request to delete Admin" do
+	before { delete user_path(admin) }
 	specify { response.should redirect_to(root_path) }
       end
     end
